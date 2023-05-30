@@ -1,0 +1,26 @@
+{
+
+  "manifest_version": 2,
+  "name": "Squizzer",
+  "version": "1.0",
+
+  "description": "Pitié de l'aide",
+
+  "icons": {
+    "48": "icons/border-48.svg"
+  },
+  "permissions": [
+    "tabs", "<all_urls>",
+    "notifications",
+    "*://*.squiz.gg/*"
+  ],
+
+  "browser_action": {
+    "default_popup": "popup.html"
+  },
+
+  "content_scripts": [{
+    "matches": ["*://*.squiz.gg/*", "*://squiz.gg/*", "https://squiz.gg/*/*", "https://squiz.gg/room/0"],
+    "js": ["content_script_main.js"]
+  }]
+}
